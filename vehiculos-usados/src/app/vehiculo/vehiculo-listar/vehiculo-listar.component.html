@@ -1,0 +1,38 @@
+<div class="container mt-4">
+  <h2>Lista de Vehículos</h2>
+  
+  <!-- TablAa de vehículos -->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Marca</th>
+        <th>Línea</th>
+        <th>Modelo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vehiculo of vehiculos">
+        <td>{{ vehiculo.marca }}</td>
+        <td>{{ vehiculo.linea }}</td>
+        <td>{{ vehiculo.modelo }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Nueva sección: Conteo de vehículos por marca -->
+  <h3>Conteo de Vehículos por Marca</h3>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Marca</th>
+        <th>Cantidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let marca of conteoMarcas | keyvalue">
+        <td>{{ marca.key }}</td>
+        <td>{{ marca.value }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
